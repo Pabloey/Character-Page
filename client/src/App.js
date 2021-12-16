@@ -13,7 +13,7 @@ function App () {
       <main>
         <Switch>
           <Route exact path="/" component={Home}></Route>
-          <Route exact path="/chars" component={(props) => <Characters {...props} />}></Route>
+          <Route path="/chars" component={(props) => <Characters {...props} />}></Route>
           <Route exact path="/about" component={About}></Route>
           <Route exact path="/credits" component={Credits}></Route>
         </Switch>

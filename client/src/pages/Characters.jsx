@@ -1,9 +1,28 @@
 import React from "react";
+// import { Link } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
+import CharHalf from "../components/CharHalf";
 
-export default function Characters() {
+export default function Characters(props) {
+  let array = ["jinx", "vi", "caitlyn", "jayce"];
+
   return (
     <div>
-      <h1>This is the characters page</h1>
+      <div>
+        <h1>This is the characters page</h1>
+        {array.map((e, i) => (
+          <span key={i} onClick={() => props.history.push(`/chars/${e}`)}>
+            {e}{" "}
+          </span>
+        ))}
+        {/* <Link to={`/chars/jinx`}></Link> */}
+        {/* Top Link is same as bottom onClick. Either works */}
+      </div>
+      <main>
+        <Switch>
+          <Route path="/chars/:id" component={(props) => <CharHalf {...props} />}></Route>
+        </Switch>
+      </main>
     </div>
   );
 }
