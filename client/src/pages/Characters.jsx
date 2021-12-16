@@ -15,12 +15,10 @@ export default function Characters(props) {
             {e}{" "}
           </span>
         ))}
-        {/* <Link to={`/chars/jinx`}></Link> */}
-        {/* Top Link is same as bottom onClick. Either works */}
       </div>
       <main>
         <Switch>
-          <Route path="/chars/:id" component={(props) => <CharHalf {...props} />}></Route>
+          <Route path="/chars/:id" component={(props) => <CharHalf {...props} array={array} />}></Route>
         </Switch>
       </main>
     </div>
