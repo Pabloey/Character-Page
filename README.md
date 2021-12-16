@@ -1,4 +1,4 @@
-# LoL Character Page
+# LoL Champion Page
 
 ### By: Pablo Yocupicio
 
@@ -10,7 +10,7 @@
 
 ## Overview
 
-Using MongoDB, Express, React and Node I will develop a website that will show my favorite game's characters with details under it. The purpose of the page is when you click your characters icon it will display characters lore, information, abilities and build. Users will also be able to add their own builds also. Possibility to update it or maybe delete it.
+Using MongoDB, Express, React and Node I will develop a website that will show my favorite game's characters with details under it. The purpose of the ..page is when you click your characters icon it will display characters lore, information, abilities and build. Users will also be able to add their own builds also. Possibility to update it or maybe delete it.
 
 ## How to
 
