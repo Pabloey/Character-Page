@@ -11,5 +11,21 @@
     "mongoose": "^6.1.2",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.15"
-  }
+  },
+  "name": "character-page",
+  "description": "### By: Pablo Yocupicio",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pabloey/Character-Page.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pabloey/Character-Page/issues"
+  },
+  "homepage": "https://github.com/Pabloey/Character-Page#readme"
 }
