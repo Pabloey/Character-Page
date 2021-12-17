@@ -7,10 +7,9 @@ import About from './pages/About';
 import Credits from './pages/Credits';
 
 function App () {
-  let array = [1, 2, 3, 4]
   return (
     <div>
-      <Nav array={array} />
+      <Nav />
       <main>
         <Switch>
           <Route exact path="/" component={Home}></Route>

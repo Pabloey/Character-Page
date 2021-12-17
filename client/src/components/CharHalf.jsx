@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function CharHalf() {
+export default function CharHalf(props) {
   const urlEnd = props.match.params.id;
 
   return (

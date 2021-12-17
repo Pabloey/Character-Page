@@ -1,8 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-
-export default function Nav(props) {
+export default function Nav() {
   return (
     <div>
       <nav>
@@ -12,7 +11,6 @@ export default function Nav(props) {
         </Link>
         <Link to="/about">About</Link>
         <Link to="/credits">Credits</Link>
-        {props.array}
       </nav>
     </div>
   );
