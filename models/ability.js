@@ -11,3 +11,4 @@ const Ability = new mongoose.Schema(
   }
 )
 
+module.exports = Ability;
