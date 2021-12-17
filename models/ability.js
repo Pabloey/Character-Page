@@ -7,7 +7,7 @@ const Ability = new mongoose.Schema(
     wSkill: { type: String, require: true },
     eSkill: { type: String, require: true },
     rSkill: { type: String, require: true },
-    ability_id: { type: mongoose.Schema.Types.ObjectId, ref: 'abilities' }
+    ability_id: { type: mongoose.Schema.Types.ObjectId, ref: 'characters' }
   }
 )
 
