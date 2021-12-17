@@ -6,8 +6,9 @@ const Character = new mongoose.Schema(
     age: { type: String, required: true },
     origin: { type: String, required: true },
     lore: { type: String, required: true },
+    role: { type: String, required: true },
     image: { type: String, required: true }
   }
 )
 
-modules.export = Character;
+module.exports = Character;
