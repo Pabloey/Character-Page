@@ -29,7 +29,13 @@ export default function CharHalf(props) {
       <h4>Lore: {character.lore}</h4>
       <h3>Role: {character.role}</h3>
       <br />
-      {showForm ? <Build {...props} switchForm={switchForm} /> : <button onClick={() => switchForm()}>Submit a build</button>}
+      {showForm ? (
+        <Build {...props} switchForm={switchForm} />
+      ) : (
+        <div>
+          <button onClick={() => switchForm()}>Submit a build</button>
+        </div>
+      )}
       <BuildList {...props} />
     </div>
   );

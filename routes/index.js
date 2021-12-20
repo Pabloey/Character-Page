@@ -11,5 +11,7 @@ router.get('/chars/:id', controllers.getCharacters)
 router.get('/chars/builds/:id', controllers.getBuilds)
 router.post('/chars/builds/:id', controllers.postBuild)
 
+router.delete('/chars/builds/:id', controllers.deleteBuild)
+
 
 module.exports = router

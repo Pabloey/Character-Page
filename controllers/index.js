@@ -52,9 +52,20 @@ const postBuild = async (req, res) => {
   }
 }
 
+const deleteBuild = async (req, res) => {
+  try {
+    const builds = await Build.findOneAndDelete({ _id: req.params.id });
+    return res.status(201).json({
+    });
+  } catch (error) {
+    return res.status(500).json({ error: error.message });
+  }
+}
+
 module.exports = {
   // getAllChar,
   getCharacters,
   postBuild,
   getBuilds,
+  deleteBuild,
 }
