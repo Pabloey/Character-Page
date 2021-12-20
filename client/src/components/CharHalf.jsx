@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import Item from "../components/Item";
 
 export default function CharHalf(props) {
   const [character, setCharacter] = useState({});
@@ -22,7 +23,8 @@ export default function CharHalf(props) {
       <h3>Origin: {character.origin}</h3>
       <h4>Lore: {character.lore}</h4>
       <h3>Role: {character.role}</h3>
-      <img src={character.image} />
+      <img src={character.image} alt={character.name} />
+      <Item charId={charId} />
     </div>
   );
 }
