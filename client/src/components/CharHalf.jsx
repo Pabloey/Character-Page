@@ -7,15 +7,14 @@ import { Switch, Route } from "react-router-dom";
 
 export default function CharHalf(props) {
   const [character, setCharacter] = useState({});
-  const charId = props.match.params.id;
 
   useEffect(() => {
     const getCharDetails = async () => {
-      const response = await axios.get(`http://localhost:3001/api/chars/${charId}`);
+      const response = await axios.get(`http://localhost:3001/api/chars/${props.match.params.id}`);
       setCharacter(response.data.character);
     };
     getCharDetails();
-  }, [charId]);
+  }, [props.match.params.id]);
 
   return (
     <div>
@@ -26,8 +25,8 @@ export default function CharHalf(props) {
       <h3>Role: {character.role}</h3>
       <img src={character.image} alt={character.name} />
       <Switch>
-        <Route exact path="/chars/:id" component={(props) => <Item {...props} charId={charId} />}></Route>
-        <Route path="/chars/:id/build" component={(props) => <Build {...props} charId={charId} />}></Route>
+        <Route exact path="/chars/:id" component={(props) => <Item {...props} />}></Route>
+        <Route path="/chars/:id/build" component={(props) => <Build {...props} />}></Route>
       </Switch>
     </div>
   );
