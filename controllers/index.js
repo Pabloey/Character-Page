@@ -1,4 +1,4 @@
-const { Character, Ability } = require('../models')
+const { Character, Ability, Build } = require('../models')
 
 const getCharacters = async (req, res) => {
 
@@ -17,6 +17,32 @@ const getCharacters = async (req, res) => {
   }
 }
 
+const getBuilds = async (req, res) => {
+  try {
+    const builds = await Build.find({ build_id: req.params.id });
+    return res.status(201).json({
+      builds
+    });
+  } catch (error) {
+    return res.status(500).json({ error: error.message });
+  }
+}
+
+const postBuild = async (req, res) => {
+  try {
+    const build = await new Build(req.body)
+
+    await build.save()
+    return res.status(201).json({
+      build,
+    });
+  } catch (error) {
+    return res.status(500).json({ error: error.message });
+  }
+}
+
 module.exports = {
   getCharacters,
+  postBuild,
+  getBuilds,
 }

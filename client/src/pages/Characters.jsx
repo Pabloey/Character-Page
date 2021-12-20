@@ -4,7 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import CharHalf from "../components/CharHalf";
 
 export default function Characters(props) {
-  let charArray = ["jinx", "vi", "caitlyn", "jayce"];
+  let charArray = ["Jinx", "Vi", "Caitlyn", "Jayce"];
 
   return (
     <div>

@@ -8,7 +8,7 @@ const Build = new mongoose.Schema(
     item4: { type: String, required: true },
     item5: { type: String, required: true },
     item6: { type: String, required: true },
-    item_id: { type: mongoose.Schema.Types.ObjectId, ref: 'characters' }
+    build_id: { type: String, required: true }
   }
 )
 

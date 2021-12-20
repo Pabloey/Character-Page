@@ -14,7 +14,7 @@ export const Build = (props) => {
     build_id: props.match.params.id,
   });
 
-  const [testBuild, setTestBuild] = useState({})
+  const [testBuild, setTestBuild] = useState({});
 
   const itemArray = Object.entries(items);
 
@@ -32,14 +32,15 @@ export const Build = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setTestBuild(newBuild)
+    setTestBuild(newBuild);
+    await props.switchForm()
   };
 
-  console.log(testBuild)
+  console.log(newBuild);
 
   return (
     <div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <select name="item1" onChange={handleChange}>
           {itemArray.map((e, i) => (
             <option key={i} value={e[0]}>

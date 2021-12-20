@@ -6,5 +6,8 @@ router.get('/', (req, res) => res.send('This is root'))
 
 router.get('/chars/:id', controllers.getCharacters)
 
+router.get('/chars/builds/:id', controllers.getBuilds)
+router.post('/chars/builds/:id', controllers.postBuild)
+
 
 module.exports = router
