@@ -59,7 +59,7 @@ export const Build = (props) => {
           ))}
         </select>
       </div>
-      <button onClick={() => props.history.push(`/chars/${props.match.params.id}`)}>Cancel</button>
+      <button onClick={() => props.switchForm()}>Cancel</button>
     </div>
   );
 };
