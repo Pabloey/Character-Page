@@ -1,9 +1,13 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const Item = (props) => {
+export default function Item(props) {
   const [items, setItems] = useState({});
   const itemArray = Object.entries(items);
+
+  let fileNumber = [];
+
+  let myObject = {};
 
   useEffect(() => {
     const getItemDetails = async () => {
@@ -13,14 +17,18 @@ const Item = (props) => {
     getItemDetails();
   }, [props.charId]);
 
+  itemArray.map((e, i) => {
+    fileNumber.push();
+  });
+
   return (
     <div>
-      {itemArray.map((e, i) => {
-        // console.log(e[0] + e[1].name); // displays number and name
-        return <p>{e[0]} {e[1].name}</p>;
-      })}
+      <select>
+        {itemArray.map((e, i) => (
+          // console.log(e[0] + e[1].name); // displays number and name
+          <option value={e[0]}>{e[1].name}</option>
+        ))}
+      </select>
     </div>
   );
-};
-
-export default Item;
+}
