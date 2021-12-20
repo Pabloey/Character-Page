@@ -9,7 +9,8 @@ const Build = new mongoose.Schema(
     item5: { type: String, required: true },
     item6: { type: String, required: true },
     build_id: { type: String, required: true }
-  }
+  },
+  { timestamps: true }
 )
 
 module.exports = Build;

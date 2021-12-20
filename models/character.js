@@ -8,7 +8,8 @@ const Character = new mongoose.Schema(
     lore: { type: String, required: true },
     role: { type: String, required: true },
     image: { type: String, required: true }
-  }
+  },
+  { timestamps: true }
 )
 
 module.exports = Character;

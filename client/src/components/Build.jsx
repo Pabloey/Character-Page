@@ -14,8 +14,6 @@ export const Build = (props) => {
     build_id: props.match.params.id,
   });
 
-  const [testBuild, setTestBuild] = useState({});
-
   const itemArray = Object.entries(items);
 
   useEffect(() => {
@@ -32,10 +30,9 @@ export const Build = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setTestBuild(newBuild);
-    await props.switchForm()
+    const res = await axios.post(`http://localhost:3001/api/chars/builds/Caitlyn`, newBuild);
+    props.switchForm()
   };
-
 
   return (
     <div>
