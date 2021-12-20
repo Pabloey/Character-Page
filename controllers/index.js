@@ -1,5 +1,16 @@
 const { Character, Ability, Build } = require('../models')
 
+// const getAllChar = async (req, res) => {
+//   try {
+//     const allChar = await Character.find({})
+//     return res.status(201).json({
+//       allChar
+//     })
+//   } catch (error) {
+//     return res.status(500).json({ error: error.message })
+//   }
+// }
+
 const getCharacters = async (req, res) => {
 
   id = req.params.id
@@ -42,6 +53,7 @@ const postBuild = async (req, res) => {
 }
 
 module.exports = {
+  // getAllChar,
   getCharacters,
   postBuild,
   getBuilds,

@@ -4,6 +4,8 @@ const router = Router();
 
 router.get('/', (req, res) => res.send('This is root'))
 
+
+// router.get('/chars/', controllers.getAllChar)
 router.get('/chars/:id', controllers.getCharacters)
 
 router.get('/chars/builds/:id', controllers.getBuilds)

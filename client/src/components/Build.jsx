@@ -31,7 +31,7 @@ export const Build = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const res = await axios.post(`http://localhost:3001/api/chars/builds/Caitlyn`, newBuild);
-    props.switchForm()
+    props.switchForm();
   };
 
   return (
