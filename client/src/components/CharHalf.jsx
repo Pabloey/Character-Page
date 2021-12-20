@@ -1,11 +1,12 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Item from "../components/Item";
+import Item from "./Item";
+import { Build } from "./Build";
+import { Switch, Route } from "react-router-dom";
 
 export default function CharHalf(props) {
   const [character, setCharacter] = useState({});
-
   const charId = props.match.params.id;
 
   useEffect(() => {
@@ -24,7 +25,10 @@ export default function CharHalf(props) {
       <h4>Lore: {character.lore}</h4>
       <h3>Role: {character.role}</h3>
       <img src={character.image} alt={character.name} />
-      <Item charId={charId} />
+      <Switch>
+        <Route exact path="/chars/:id" component={(props) => <Item {...props} charId={charId} />}></Route>
+        <Route path="/chars/:id/build" component={(props) => <Build {...props} charId={charId} />}></Route>
+      </Switch>
     </div>
   );
 }
