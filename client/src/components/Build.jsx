@@ -36,7 +36,6 @@ export const Build = (props) => {
     await props.switchForm()
   };
 
-  console.log(newBuild);
 
   return (
     <div>
