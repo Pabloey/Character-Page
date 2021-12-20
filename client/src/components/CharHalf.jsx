@@ -7,7 +7,6 @@ import BuildList from "./BuildList";
 export default function CharHalf(props) {
   const [character, setCharacter] = useState({});
   const [showForm, setShowForm] = useState(false);
-  const [buildList, setBuildList] = useState({});
 
   const switchForm = () => {
     if (showForm) setShowForm(false);
@@ -31,7 +30,7 @@ export default function CharHalf(props) {
       <h3>Role: {character.role}</h3>
       <br />
       {showForm ? <Build {...props} switchForm={switchForm} /> : <button onClick={() => switchForm()}>Submit a build</button>}
-      <BuildList />
+      <BuildList {...props} />
     </div>
   );
 }

@@ -22,16 +22,16 @@ export const Build = (props) => {
       setItems(response.data.data);
     };
     getItemDetails();
-  }, [props.charId]);
-
-  const handleChange = (e) => {
-    setNewBuild({ ...newBuild, [e.target.name]: e.target.value });
-  };
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const res = await axios.post(`http://localhost:3001/api/chars/builds/Caitlyn`, newBuild);
     props.switchForm();
+  };
+
+  const handleChange = (e) => {
+    setNewBuild({ ...newBuild, [e.target.name]: e.target.value });
   };
 
   return (
