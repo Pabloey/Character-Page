@@ -6,4 +6,5 @@ router.get('/', (req, res) => res.send('This is root'))
 
 router.get('/chars/:id', controllers.getCharacters)
 
+
 module.exports = router

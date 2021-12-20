@@ -3,6 +3,19 @@ import axios from "axios";
 
 export const Build = (props) => {
   const [items, setItems] = useState({});
+
+  const [newBuild, setNewBuild] = useState({
+    item1: "",
+    item2: "",
+    item3: "",
+    item4: "",
+    item5: "",
+    item6: "",
+    build_id: props.match.params.id,
+  });
+
+  const [testBuild, setTestBuild] = useState({})
+
   const itemArray = Object.entries(items);
 
   useEffect(() => {
@@ -13,53 +26,65 @@ export const Build = (props) => {
     getItemDetails();
   }, [props.charId]);
 
+  const handleChange = (e) => {
+    setNewBuild({ ...newBuild, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setTestBuild(newBuild)
+  };
+
+  console.log(testBuild)
+
   return (
     <div>
-      <div>
-        <select name="item1">
+      <form>
+        <select name="item1" onChange={handleChange}>
           {itemArray.map((e, i) => (
             <option key={i} value={e[0]}>
               {e[1].name}
             </option>
           ))}
         </select>
-        <select name="item2">
+        <select name="item2" onChange={handleChange}>
           {itemArray.map((e, i) => (
             <option key={i} value={e[0]}>
               {e[1].name}
             </option>
           ))}
         </select>
-        <select name="item3">
+        <select name="item3" onChange={handleChange}>
           {itemArray.map((e, i) => (
             <option key={i} value={e[0]}>
               {e[1].name}
             </option>
           ))}
         </select>
-        <select name="item4">
+        <select name="item4" onChange={handleChange}>
           {itemArray.map((e, i) => (
             <option key={i} value={e[0]}>
               {e[1].name}
             </option>
           ))}
         </select>
-        <select name="item5">
+        <select name="item5" onChange={handleChange}>
           {itemArray.map((e, i) => (
             <option key={i} value={e[0]}>
               {e[1].name}
             </option>
           ))}
         </select>
-        <select name="item6">
+        <select name="item6" onChange={handleChange}>
           {itemArray.map((e, i) => (
             <option key={i} value={e[0]}>
               {e[1].name}
             </option>
           ))}
         </select>
-      </div>
-      <button onClick={() => props.switchForm()}>Cancel</button>
+        <button type="submit">Submit</button>
+        <button onClick={() => props.switchForm()}>Cancel</button>
+      </form>
     </div>
   );
 };
