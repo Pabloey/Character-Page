@@ -16,16 +16,12 @@ export default function CharHalf(props) {
       return;
     };
     getItemDetails();
-  }, []);
+  }, [props.match.params.id]);
 
   const switchForm = () => {
     if (showForm) setShowForm(false);
     else setShowForm(true);
   };
-
-  useEffect(() => {
-    // console.log(charBuilds);
-  }, [charBuilds]);
 
   useEffect(() => {
     const getCharDetails = async () => {

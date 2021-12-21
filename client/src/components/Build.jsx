@@ -22,7 +22,7 @@ export const Build = (props) => {
       setItems(response.data.data);
     };
     getItemDetails();
-  }, []);
+  }, [props.match.params.id]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
