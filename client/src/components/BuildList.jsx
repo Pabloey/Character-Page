@@ -20,6 +20,11 @@ export default function Item(props) {
   //---------------------------------------------------------------------------
 
   // This is where delete button is being handled, deleting per _id, controller deleteBuild @ route http://localhost:3001/api/chars/builds/:id.
+  const handleDelete = async (e) => {
+    const res = await axios.delete(`http://localhost:3001/api/chars/builds/${e.target.name}`);
+    const response = await axios.get(`http://localhost:3001/api/chars/builds/${props.match.params.id}`);
+    props.setCharBuilds(response.data.builds);
+  };
 
   //---------------------------------------------------------------------------
 
