@@ -1,44 +1,51 @@
-import axios from "axios";
 import { useState } from "react";
+import axios from "axios";
+import EditBuild from "./EditBuild";
 
+//BuildList is showing the list of builds from database
 export default function Item(props) {
+  //Tern op to show edit form or not
   const [editOn, setEditOn] = useState(true);
+  const [editId, setEditId] = useState();
 
-  const switchEdit = () => {
-    if (editOn) setEditOn(false);
-    else setEditOn(true);
+  const switchEdit = (e) => {
+    if (editOn) {
+      setEditOn(false);
+      setEditId(e._id);
+    } else {
+      setEditOn(true);
+      setEditId();
+    }
   };
+  //---------------------------------------------------------------------------
 
-  console.log(editOn);
+  // This is where delete button is being handled, deleting per _id, controller deleteBuild @ route http://localhost:3001/api/chars/builds/:id.
 
-  const handleDelete = async (e) => {
-    const res = await axios.delete(`http://localhost:3001/api/chars/builds/${e.target.name}`);
-    const response = await axios.get(`http://localhost:3001/api/chars/builds/${props.match.params.id}`);
-    props.setCharBuilds(response.data.builds);
-  };
+  //---------------------------------------------------------------------------
 
+  // {
+  //   editOn ? <EditBuild {...props} items={props.items} editId={editId} switchEdit={switchEdit} /> : <p>hello</p>;
+  // }
   return (
     <div>
-      <div>
-        {editOn ? (
-          props.charBuilds.map((e, i) => (
-            <div key={i}>
-              <img src={`http://ddragon.leagueoflegends.com/cdn/11.24.1/img/item/${e.item1}.png`} alt={e.item1} />
-              <img src={`http://ddragon.leagueoflegends.com/cdn/11.24.1/img/item/${e.item2}.png`} alt={e.item2} />
-              <img src={`http://ddragon.leagueoflegends.com/cdn/11.24.1/img/item/${e.item3}.png`} alt={e.item3} />
-              <img src={`http://ddragon.leagueoflegends.com/cdn/11.24.1/img/item/${e.item4}.png`} alt={e.item4} />
-              <img src={`http://ddragon.leagueoflegends.com/cdn/11.24.1/img/item/${e.item5}.png`} alt={e.item5} />
-              <img src={`http://ddragon.leagueoflegends.com/cdn/11.24.1/img/item/${e.item6}.png`} alt={e.item6} />
-              <button onClick={handleDelete} name={e._id}>
-                X
-              </button>
-              <button onClick={() => switchEdit()}>Edit</button>
-            </div>
-          ))
-        ) : (
-          <button onClick={() => switchEdit()}>Cancel</button>
-        )}
-      </div>
+      {editOn ? (
+        props.charBuilds.map((e, i) => (
+          <div key={i}>
+            <img src={`http://ddragon.leagueoflegends.com/cdn/11.24.1/img/item/${e.item1}.png`} alt={e.item1} />
+            <img src={`http://ddragon.leagueoflegends.com/cdn/11.24.1/img/item/${e.item2}.png`} alt={e.item2} />
+            <img src={`http://ddragon.leagueoflegends.com/cdn/11.24.1/img/item/${e.item3}.png`} alt={e.item3} />
+            <img src={`http://ddragon.leagueoflegends.com/cdn/11.24.1/img/item/${e.item4}.png`} alt={e.item4} />
+            <img src={`http://ddragon.leagueoflegends.com/cdn/11.24.1/img/item/${e.item5}.png`} alt={e.item5} />
+            <img src={`http://ddragon.leagueoflegends.com/cdn/11.24.1/img/item/${e.item6}.png`} alt={e.item6} />
+            <button onClick={handleDelete} name={e._id}>
+              X
+            </button>
+            <button onClick={() => switchEdit(e)}>{e._id}</button>
+          </div>
+        ))
+      ) : (
+        <EditBuild {...props} items={props.items} editId={editId} switchEdit={switchEdit} />
+      )}
     </div>
   );
 }

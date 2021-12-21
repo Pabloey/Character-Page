@@ -1,9 +1,7 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 
 export const Build = (props) => {
-  const [items, setItems] = useState({});
-
   const [newBuild, setNewBuild] = useState({
     item1: "1001",
     item2: "1001",
@@ -14,15 +12,9 @@ export const Build = (props) => {
     build_id: props.match.params.id,
   });
 
-  const itemArray = Object.entries(items);
+  // console.log(itemName);
 
-  useEffect(() => {
-    const getItemDetails = async () => {
-      const response = await axios.get(`http://ddragon.leagueoflegends.com/cdn/11.24.1/data/en_US/item.json`);
-      setItems(response.data.data);
-    };
-    getItemDetails();
-  }, [props.match.params.id]);
+  const itemArray = Object.entries(props.items);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -39,7 +31,7 @@ export const Build = (props) => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <select name="item1" onChange={handleChange}>
+        <select name="item1" value="hi" onChange={handleChange}>
           {itemArray.map((e, i) => (
             <option key={i} value={e[0]}>
               {e[1].name}

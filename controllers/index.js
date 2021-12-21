@@ -1,16 +1,6 @@
 const { Character, Ability, Build } = require('../models')
 
-// const getAllChar = async (req, res) => {
-//   try {
-//     const allChar = await Character.find({})
-//     return res.status(201).json({
-//       allChar
-//     })
-//   } catch (error) {
-//     return res.status(500).json({ error: error.message })
-//   }
-// }
-
+//getCharacters gets all character info according to req.params.id which is character names.
 const getCharacters = async (req, res) => {
 
   id = req.params.id
@@ -28,6 +18,7 @@ const getCharacters = async (req, res) => {
   }
 }
 
+//getBuild gets specific builds to req.params.id which is character names.
 const getBuilds = async (req, res) => {
   try {
     const builds = await Build.find({ build_id: req.params.id });
@@ -39,6 +30,19 @@ const getBuilds = async (req, res) => {
   }
 }
 
+//getBuild gets one specific build. Similar to getBuilds, but it's specific ID
+const getBuild = async (req, res) => {
+  try {
+    const build = await Build.find({ _id: req.params.id });
+    return res.status(201).json({
+      build
+    });
+  } catch (error) {
+    return res.status(500).json({ error: error.message })
+  }
+}
+
+//postBuild is posting everything inside of req.body to the route database
 const postBuild = async (req, res) => {
   try {
     const build = await new Build(req.body)
@@ -52,6 +56,7 @@ const postBuild = async (req, res) => {
   }
 }
 
+//deleteBuild is deleting specific build per req.params.id which is _id, unique id per object
 const deleteBuild = async (req, res) => {
   try {
     const builds = await Build.findOneAndDelete({ _id: req.params.id });
@@ -62,10 +67,22 @@ const deleteBuild = async (req, res) => {
   }
 }
 
+const updateBuild = async (req, res) => {
+  try {
+    const update = await Build.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    return res.status(201).json({
+    })
+  } catch (error) {
+    return res.status(500).json({ error: error.message })
+  }
+}
+
+
 module.exports = {
-  // getAllChar,
   getCharacters,
   postBuild,
   getBuilds,
   deleteBuild,
+  getBuild,
+  updateBuild
 }
