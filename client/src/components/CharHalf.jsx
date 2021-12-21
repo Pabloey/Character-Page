@@ -7,11 +7,25 @@ import BuildList from "./BuildList";
 export default function CharHalf(props) {
   const [character, setCharacter] = useState({});
   const [showForm, setShowForm] = useState(false);
+  const [charBuilds, setCharBuilds] = useState([]);
+
+  useEffect(() => {
+    const getItemDetails = async () => {
+      const response = await axios.get(`http://localhost:3001/api/chars/builds/${props.match.params.id}`);
+      setCharBuilds(response.data.builds);
+      return;
+    };
+    getItemDetails();
+  }, []);
 
   const switchForm = () => {
     if (showForm) setShowForm(false);
     else setShowForm(true);
   };
+
+  useEffect(() => {
+    // console.log(charBuilds);
+  }, [charBuilds]);
 
   useEffect(() => {
     const getCharDetails = async () => {
@@ -30,13 +44,13 @@ export default function CharHalf(props) {
       <h3>Role: {character.role}</h3>
       <br />
       {showForm ? (
-        <Build {...props} switchForm={switchForm} />
+        <Build {...props} switchForm={switchForm} setCharBuilds={setCharBuilds} />
       ) : (
         <div>
           <button onClick={() => switchForm()}>Submit a build</button>
         </div>
       )}
-      <BuildList {...props} />
+      <BuildList {...props} setCharBuilds={setCharBuilds} charBuilds={charBuilds} />
     </div>
   );
 }
