@@ -16,7 +16,7 @@ const db = mongoose.connection;
 module.exports = db;
 
 // const mongoose = require('mongoose')
-// const path = require('path')
+
 // require('dotenv').config({ path: "./config.env" });
 
 // let dbUrl = process.env.NODE_ENV === 'production' ? process.env.MONGO_URI : 'mongodb://127.0.0.1:27017/characterDatabase'

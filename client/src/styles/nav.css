@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&display=swap");
+
+.nav-bar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+  padding: 10px 0px 15px 0px;
+  background-color: rgb(53, 53, 53);
+  box-shadow: 1px 1px 5px black;
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
+.nav-text {
+  font-family: "Open Sans", Courier, monospace;
+  color: white;
+  font-size: 28px;
+  font-weight: 800;
+  font-style: italic;
+}

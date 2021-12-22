@@ -6,6 +6,7 @@ const cors = require('cors')
 const logger = require('morgan');
 const mongoose = require('mongoose');
 const path = require('path')
+
 require('dotenv').config({ path: "./config.env" });
 
 
