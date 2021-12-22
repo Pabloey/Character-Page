@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import EditBuild from "./EditBuild";
+import { BASE_URL } from "../globals";
 
 //BuildList is showing the list of builds from database
 export default function Item(props) {
@@ -17,20 +18,18 @@ export default function Item(props) {
       setEditId();
     }
   };
-  //---------------------------------------------------------------------------
+  //--------------------------------------------------------------------------
 
-  // This is where delete button is being handled, deleting per _id, controller deleteBuild @ route http://localhost:3001/api/chars/builds/:id.
+  // This is where delete button is being handled, deleting per _id, controller deleteBuild @ route BASE_URL/chars/builds/:id.
   const handleDelete = async (e) => {
-    const res = await axios.delete(`http://localhost:3001/api/chars/builds/${e.target.name}`);
-    const response = await axios.get(`http://localhost:3001/api/chars/builds/${props.match.params.id}`);
+    const res = await axios.delete(`${BASE_URL}/chars/builds/${e.target.name}`);
+    const response = await axios.get(`${BASE_URL}/chars/builds/${props.match.params.id}`);
     props.setCharBuilds(response.data.builds);
   };
 
-  //---------------------------------------------------------------------------
+  //--------------------------------------------------------------------------
 
-  // {
-  //   editOn ? <EditBuild {...props} items={props.items} editId={editId} switchEdit={switchEdit} /> : <p>hello</p>;
-  // }
+  //Mapping through props.charBuilds which is Riot's API with their item codes and images. With a delete and edit button.
   return (
     <div>
       {editOn ? (

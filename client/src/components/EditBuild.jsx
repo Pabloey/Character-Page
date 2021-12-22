@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import { BASE_URL } from "../globals";
 
 export default function EditBuild(props) {
   const [newBuild, setNewBuild] = useState({
@@ -12,20 +13,24 @@ export default function EditBuild(props) {
     build_id: props.match.params.id,
   });
 
+  // Posting update to specific ID and getting back the new list of builds. Flipping switchEdit to flip the tern-op
   const handleUpdate = async (e) => {
     e.preventDefault();
-    const res = await axios.put(`http://localhost:3001/api/chars/builds/${props.editId}`, newBuild);
-    const response = await axios.get(`http://localhost:3001/api/chars/builds/${props.match.params.id}`);
+    const res = await axios.put(`${BASE_URL}/chars/builds/${props.editId}`, newBuild);
+    const response = await axios.get(`${BASE_URL}/chars/builds/${props.match.params.id}`);
     props.setCharBuilds(response.data.builds);
     props.switchEdit();
   };
 
+  //-------------------------------------------------------------------------
   const handleChange = (e) => {
     setNewBuild({ ...newBuild, [e.target.name]: e.target.value });
   };
 
+  //Turning object props.items into an Array.
   const itemArray = Object.entries(props.items);
 
+  //Mapping through Arrays to make 6 Select-options.
   return (
     <div>
       <form onSubmit={handleUpdate}>
@@ -74,8 +79,6 @@ export default function EditBuild(props) {
         <button type="submit">Update</button>
         <button onClick={() => props.switchEdit()}>Cancel</button>
       </form>
-      <p>{props.editId}</p>
-      {console.log(props.editId)}
     </div>
   );
 }

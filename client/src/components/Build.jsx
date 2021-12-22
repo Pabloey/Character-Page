@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import { BASE_URL } from "../globals";
 
 export const Build = (props) => {
   const [newBuild, setNewBuild] = useState({
@@ -18,8 +19,8 @@ export const Build = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await axios.post(`http://localhost:3001/api/chars/builds/${props.match.params.id}`, newBuild);
-    const resAgain = await axios.get(`http://localhost:3001/api/chars/builds/${props.match.params.id}`);
+    const res = await axios.post(`${BASE_URL}/chars/builds/${props.match.params.id}`, newBuild);
+    const resAgain = await axios.get(`${BASE_URL}/chars/builds/${props.match.params.id}`);
     props.setCharBuilds(resAgain.data.builds);
     props.switchForm();
   };
