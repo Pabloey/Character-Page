@@ -41,6 +41,15 @@ export default function CharHalf(props) {
     getCharDetails();
   }, [props.match.params.id]);
   //--------------------------------------------------------------------------
+  const [abilities, setAbilities] = useState({});
+
+  useEffect(() => {
+    const getAbility = async () => {
+      const response = await axios.get(`${BASE_URL}/ability/${props.match.params.id}`);
+      setAbilities(response.data.character);
+    };
+    getAbility();
+  }, [props.match.params.id]);
 
   // This is pulling information from Riot's item api, statiting with setItems
   const [items, setItems] = useState({});

@@ -18,6 +18,21 @@ const getCharacters = async (req, res) => {
   }
 }
 
+const getAbilities = async (req, res) => {
+  id = req.params.id
+  idCap = id.charAt(0).toUpperCase() + id.slice(1)
+  try {
+    const abilities = await Ability.find({
+      ability_id: `${idCap}`
+    });
+    return res.status(201).json({
+      abilities
+    })
+  } catch (error) {
+    return res.status(500).json({ error: error.message })
+  }
+}
+
 //getBuild gets specific builds to req.params.id which is character names.
 const getBuilds = async (req, res) => {
   try {
@@ -79,10 +94,11 @@ const updateBuild = async (req, res) => {
 
 
 module.exports = {
+  getAbilities,
   getCharacters,
   postBuild,
   getBuilds,
   deleteBuild,
   getBuild,
-  updateBuild
+  updateBuild,
 }

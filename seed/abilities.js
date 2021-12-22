@@ -43,7 +43,7 @@ const main = async () => {
     },
   ]
   await Ability.insertMany(abilities)
-  console.log('abilities creaetd')
+  console.log('abilities created')
 };
 
 const run = async () => {
