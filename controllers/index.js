@@ -18,11 +18,12 @@ const getCharacters = async (req, res) => {
   }
 }
 
+//getAbilities gets specific abilities per id which is character name
 const getAbilities = async (req, res) => {
   id = req.params.id
   idCap = id.charAt(0).toUpperCase() + id.slice(1)
   try {
-    const abilities = await Ability.find({
+    const abilities = await Ability.findOne({
       ability_id: `${idCap}`
     });
     return res.status(201).json({

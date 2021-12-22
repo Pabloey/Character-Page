@@ -5,6 +5,8 @@ import CharHalf from "../components/CharHalf";
 import "../styles/char.css";
 
 export default function Characters(props) {
+  // const [curChar, setCurChar] = useState();
+
   let charArray = [
     { name: "Jinx", image: "http://ddragon.leagueoflegends.com/cdn/11.24.1/img/champion/Jinx.png" },
     { name: "Vi", image: "http://ddragon.leagueoflegends.com/cdn/11.24.1/img/champion/Vi.png" },
@@ -12,12 +14,16 @@ export default function Characters(props) {
     { name: "Jayce", image: "http://ddragon.leagueoflegends.com/cdn/11.24.1/img/champion/Jayce.png" },
   ];
 
+  let handleClick = async (e) => {
+    props.history.push(`/chars/${e.name}`);
+  };
+
   return (
     <div>
       <div className="char-list">
         {charArray.map((e, i) => (
           <span className={`char-img-cont char-img-${e.name}`} key={i}>
-            <img className={`char-img`} src={e.image} alt="" onClick={() => props.history.push(`/chars/${e.name}`)} />
+            <img className={`char-img`} src={e.image} alt="" onClick={() => handleClick(e)} />
           </span>
         ))}
       </div>
