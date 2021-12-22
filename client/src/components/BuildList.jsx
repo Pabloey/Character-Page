@@ -44,7 +44,7 @@ export default function Item(props) {
             <button onClick={handleDelete} name={e._id}>
               X
             </button>
-            <button onClick={() => switchEdit(e)}>{e._id}</button>
+            <button onClick={() => switchEdit(e)}>Edit Build</button>
           </div>
         ))
       ) : (

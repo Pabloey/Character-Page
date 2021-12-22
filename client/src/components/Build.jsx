@@ -13,8 +13,6 @@ export const Build = (props) => {
     build_id: props.match.params.id,
   });
 
-  // console.log(itemName);
-
   const itemArray = Object.entries(props.items);
 
   const handleSubmit = async (e) => {
@@ -32,7 +30,7 @@ export const Build = (props) => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <select name="item1" value="hi" onChange={handleChange}>
+        <select name="item1" onChange={handleChange}>
           {itemArray.map((e, i) => (
             <option key={i} value={e[0]}>
               {e[1].name}

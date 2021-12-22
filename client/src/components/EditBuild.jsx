@@ -13,7 +13,8 @@ export default function EditBuild(props) {
     build_id: props.match.params.id,
   });
 
-  // Posting update to specific ID and getting back the new list of builds. Flipping switchEdit to flip the tern-op
+  // Posting update to specific ID and getting b  ack the new list of builds. Flipping switchEdit to flip the tern-op
+  //http://localhost:3001/api
   const handleUpdate = async (e) => {
     e.preventDefault();
     const res = await axios.put(`${BASE_URL}/chars/builds/${props.editId}`, newBuild);
