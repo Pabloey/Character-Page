@@ -7,7 +7,7 @@ const logger = require('morgan');
 const mongoose = require('mongoose');
 const path = require('path')
 
-require('dotenv').config({ path: "./config.env" });
+require('dotenv').config({ path: "./.env" });
 
 
 // require() imports and middleware here ^ ///////
@@ -22,12 +22,12 @@ app.use(cors())
 app.use('/api', routes);
 app.use(logger('dev'));
 
-// if (process.env.NODE_ENV === 'production') {
-//   app.use(express.static(path.join(__dirname, 'client/build')))
-//   app.get('*', (req, res) => {
-//     res.sendFile(path.join(`${__dirname}/client/build/index.html`))
-//   })
-// }
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, 'client/build')))
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(`${__dirname}/client/build/index.html`))
+  })
+}
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 

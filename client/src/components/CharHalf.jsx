@@ -57,11 +57,13 @@ export default function CharHalf(props) {
   //Displaying character details and submit build button and build list under.
   return (
     <div>
-      <h1>Name: {character.name}</h1>
-      <h3>Age: {character.age}</h3>
-      <h3>Origin: {character.origin}</h3>
-      <h4>Lore: {character.lore}</h4>
-      <h3>Role: {character.role}</h3>
+      <div className="char-details">
+        <h1>Name: {character.name}</h1>
+        <h3>Age: {character.age}</h3>
+        <h3>Origin: {character.origin}</h3>
+        <h4>Lore: {character.lore}</h4>
+        <h3>Role: {character.role}</h3>
+      </div>
       <br />
       {showForm ? (
         <Build {...props} switchForm={switchForm} setCharBuilds={setCharBuilds} items={items} setItems={setItems} />

@@ -1,3 +1,5 @@
 html {
-  background: linear-gradient(45deg, #fc354c, #0abfbc);
+  background: linear-gradient(15deg, #000000, #cb4131);
+  height: 100vh;
+  background-size: 250% 250%;
 }

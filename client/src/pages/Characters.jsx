@@ -16,8 +16,8 @@ export default function Characters(props) {
     <div>
       <div className="char-list">
         {charArray.map((e, i) => (
-          <span key={i}>
-            <img className="char-img" src={e.image} alt="" onClick={() => props.history.push(`/chars/${e.name}`)} />
+          <span className={`char-img-cont char-img-${e.name}`} key={i}>
+            <img className={`char-img`} src={e.image} alt="" onClick={() => props.history.push(`/chars/${e.name}`)} />
           </span>
         ))}
       </div>

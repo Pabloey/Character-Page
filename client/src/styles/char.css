@@ -29,14 +29,15 @@
 .char-list {
   display: grid;
   text-align: center;
-  grid-template-columns: repeat(4, 1fr);
-  padding-top: 100px;
+  grid-template-columns: repeat(12, 1fr);
+  padding-top: 80px;
 }
 
 .char-img {
   box-shadow: 0px 2px 5px black;
   filter: grayscale(75%);
   transition: 0.35s;
+  width: 85px;
 }
 
 .char-img:hover {
@@ -45,6 +46,27 @@
   transform: translate(0px, -10px);
 }
 
+.char-img-Jinx {
+  grid-column: 5 / 6;
+}
+
+.char-img-Vi {
+  grid-column: 6 / 7;
+}
+
+.char-img-Caitlyn {
+  grid-column: 7 / 8;
+}
+
+.char-img-Jayce {
+  grid-column: 8 / 9;
+}
+
 .char-half {
   text-align: center;
+}
+
+.char-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
