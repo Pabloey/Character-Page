@@ -47,7 +47,7 @@ export default function CharHalf(props) {
 
   useEffect(() => {
     const getItemDetails = async () => {
-      const response = await axios.get(`http://ddragon.leagueoflegends.com/cdn/11.24.1/data/en_US/item.json`);
+      const response = await axios.get(`https://ddragon.leagueoflegends.com/cdn/11.24.1/data/en_US/item.json`);
       setItems(response.data.data);
     };
     getItemDetails();
