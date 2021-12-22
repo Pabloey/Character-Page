@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../styles/nav.css";
+import "../styles/char.css";
 
 export default function Nav() {
   return (
     <div>
       <nav className="nav-bar">
-        <Link style={{ textDecoration: "none" }} to="/">
+        <Link style={{ textDecoration: "none", color: "white" }} to="/">
           <span className="nav-text">Home</span>
         </Link>
         <Link style={{ textDecoration: "none" }} to="/chars">
