@@ -61,27 +61,52 @@ export default function CharHalf(props) {
   return (
     <div>
       <div className="char-details">
-        <img src={character.image} alt="" />
-        <p>Name: {character.name}</p>
-        <p>Age: {character.age}</p>
-        <p>Origin: {character.origin}</p>
-        <p>Lore: {character.lore}</p>
-        <p>Role: {character.role}</p>
-        <div>
+        <img className="char-splash" src={character.image} alt="" />
+        <p className="char-lore">Lore: {character.lore}</p>
+        <p className="char-name">Name: {character.name}</p>
+        <div className="origin-tag">
+          <span className="age-box">Age: {character.age}</span>
+          <span className="origin-box">Origin: {character.origin}</span>
+          <span className="role-box">Role: {character.role}</span>
+        </div>
+        <div className="skill-cont">
           <span>
-            <img className="skill-image" src={abilities.pImage} alt="" />
+            <img className="skill-image p-skill" src={abilities.pImage} alt="" />
           </span>
           <span>
-            <img className="skill-image" src={abilities.qImage} alt="" />
+            <img className="skill-image q-skill" src={abilities.qImage} alt="" />
           </span>
           <span>
-            <img className="skill-image" src={abilities.wImage} alt="" />
+            <img className="skill-image w-skill" src={abilities.wImage} alt="" />
           </span>
           <span>
-            <img className="skill-image" src={abilities.eImage} alt="" />
+            <img className="skill-image e-skill" src={abilities.eImage} alt="" />
           </span>
           <span>
-            <img className="skill-image" src={abilities.rImage} alt="" />
+            <img className="skill-image r-skill" src={abilities.rImage} alt="" />
+          </span>
+        </div>
+        <br />
+        <p>Recommended Build</p>
+        <br />
+        <div className="item-cont">
+          <span>
+            <img className="item-image" src={`http://ddragon.leagueoflegends.com/cdn/11.24.1/img/item/${character.item1}`} alt={character.item1} />
+          </span>
+          <span>
+            <img src={`http://ddragon.leagueoflegends.com/cdn/11.24.1/img/item/${character.item2}`} alt={character.item1} />
+          </span>
+          <span>
+            <img src={`http://ddragon.leagueoflegends.com/cdn/11.24.1/img/item/${character.item3}`} alt={character.item1} />
+          </span>
+          <span>
+            <img src={`http://ddragon.leagueoflegends.com/cdn/11.24.1/img/item/${character.item4}`} alt={character.item1} />
+          </span>
+          <span>
+            <img src={`http://ddragon.leagueoflegends.com/cdn/11.24.1/img/item/${character.item5}`} alt={character.item1} />
+          </span>
+          <span>
+            <img src={`http://ddragon.leagueoflegends.com/cdn/11.24.1/img/item/${character.item6}`} alt={character.item1} />
           </span>
         </div>
       </div>
