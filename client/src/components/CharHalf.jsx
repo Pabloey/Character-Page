@@ -30,8 +30,6 @@ export default function CharHalf(props) {
     getCharDetails();
   }, [props.match.params.id]);
 
-  console.log(character);
-  console.log(abilities);
   //--------------------------------------------------------------------------
 
   // This is pulling information from Riot's item api, statiting with setItems
@@ -63,12 +61,29 @@ export default function CharHalf(props) {
   return (
     <div>
       <div className="char-details">
+        <img src={character.image} alt="" />
         <p>Name: {character.name}</p>
         <p>Age: {character.age}</p>
         <p>Origin: {character.origin}</p>
         <p>Lore: {character.lore}</p>
         <p>Role: {character.role}</p>
-        <div></div>
+        <div>
+          <span>
+            <img className="skill-image" src={abilities.pImage} alt="" />
+          </span>
+          <span>
+            <img className="skill-image" src={abilities.qImage} alt="" />
+          </span>
+          <span>
+            <img className="skill-image" src={abilities.wImage} alt="" />
+          </span>
+          <span>
+            <img className="skill-image" src={abilities.eImage} alt="" />
+          </span>
+          <span>
+            <img className="skill-image" src={abilities.rImage} alt="" />
+          </span>
+        </div>
       </div>
       {showForm ? (
         <Build {...props} switchForm={switchForm} setCharBuilds={setCharBuilds} items={items} setItems={setItems} />
