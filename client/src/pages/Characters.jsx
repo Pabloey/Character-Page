@@ -4,6 +4,10 @@ import { Route, Switch } from "react-router-dom";
 import CharHalf from "../components/CharHalf";
 import "../styles/char.css";
 import charBG from "../content/bokeh-bg.jpg";
+import jinxI from "../content/Jinx.png";
+import viI from "../content/Vi.png";
+import caitlynI from "../content/Caitlyn.png";
+import jayceI from "../content/Jayce.png";
 
 export default function Characters(props) {
   // const [curChar, setCurChar] = useState();

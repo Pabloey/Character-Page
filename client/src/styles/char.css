@@ -265,11 +265,10 @@
   border: 0px solid black;
   transition: 0.25s;
   padding: 10px;
-  transform: translate(450%, -5px);
 }
 
 .delete-btn:hover {
-  transform: translate(450%, -5px) scale(125%);
+  transform: scale(125%);
 }
 
 .edit-btn {
@@ -278,21 +277,14 @@
   border: 0px solid black;
   transition: 0.25s;
   padding: 10px;
-  transform: translate(500%, -5px);
 }
 
 .edit-btn:hover {
-  transform: translate(500%, -5px) scale(125%);
-}
-
-.user-btns {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  transform: scale(125%);
 }
 
 .userName {
-  transform: translate(-300%, 0px);
   font-size: 18px;
   color: white;
+  margin-right: 20px;
 }

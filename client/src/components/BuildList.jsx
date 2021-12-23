@@ -37,15 +37,15 @@ export default function Item(props) {
       {editOn ? (
         props.charBuilds.map((e, i) => (
           <div className="buildlist-cont" key={i}>
-            <div className="user-btns">
-              <div className="userName">{e.userName}</div>
+            <span className="userName">{e.userName}</span>
+            <span>
               <button className="delete-btn" onClick={handleDelete} name={e._id}>
                 &#9746;
               </button>
               <button className="edit-btn" onClick={() => switchEdit(e)}>
                 &#9997;
               </button>
-            </div>
+            </span>
             <div>
               <img className="buildlist-items" src={`http://ddragon.leagueoflegends.com/cdn/11.24.1/img/item/${e.item1}.png`} alt={e.item1} />
               <img className="buildlist-items" src={`http://ddragon.leagueoflegends.com/cdn/11.24.1/img/item/${e.item2}.png`} alt={e.item2} />
