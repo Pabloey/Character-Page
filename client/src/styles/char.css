@@ -122,8 +122,48 @@
   font-family: "Teko";
   color: rgba(255, 255, 255, 0.5);
 }
+.skill-cont {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
 .skill-box {
   position: relative;
+}
+
+.hover-box {
+  color: white;
+  display: grid;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  background-color: rgb(83, 51, 51);
+  padding: 10px 0px;
+  width: 400px;
+  font-size: 12px;
+  border-radius: 15px;
+  transform: translate(-45%, -125px);
+  box-shadow: 2px 2px 5px black;
+  visibility: hidden;
+  transition: 0.5s;
+  opacity: 0;
+}
+.skill-image:hover + .hover-box:before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: rgb(83, 51, 51);
+  bottom: -10px;
+  left: 200px;
+  transform: rotate(45deg);
+}
+
+.skill-image:hover + .hover-box {
+  visibility: visible;
+  transform: translate(-45%, -100px);
+  opacity: 1;
 }
 
 .skill-image {
@@ -133,7 +173,6 @@
   margin: 0px 5px;
   box-shadow: 1px 1px 5px black;
 }
-
 .skill-image:hover {
   filter: grayscale(0%);
 }

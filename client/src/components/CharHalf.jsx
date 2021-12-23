@@ -93,21 +93,36 @@ export default function CharHalf(props) {
           </span>
         </div>
         <div className="skill-cont">
-          <span className="skill-box">
+          <div className="skill-box">
             <img className="skill-image p-skill" src={abilities.pImage} alt="" />
-          </span>
-          <span>
+            <span className="hover-box">
+              {abilities.pSkill} <br /> {abilities.pDes}
+            </span>
+          </div>
+          <div className="skill-box">
             <img className="skill-image q-skill" src={abilities.qImage} alt="" />
-          </span>
-          <span>
+            <span className="hover-box">
+              {abilities.qSkill} <br /> {abilities.qDes}
+            </span>
+          </div>
+          <div className="skill-box">
             <img className="skill-image w-skill" src={abilities.wImage} alt="" />
-          </span>
-          <span>
+            <span className="hover-box">
+              {abilities.wSkill} <br /> {abilities.wDes}
+            </span>
+          </div>
+          <div className="skill-box">
             <img className="skill-image e-skill" src={abilities.eImage} alt="" />
-          </span>
-          <span>
+            <span className="hover-box">
+              {abilities.eSkill} <br /> {abilities.eDes}
+            </span>
+          </div>
+          <div className="skill-box">
             <img className="skill-image r-skill" src={abilities.rImage} alt="" />
-          </span>
+            <span className="hover-box">
+              {abilities.rSkill} <br /> {abilities.rDes}
+            </span>
+          </div>
         </div>
       </div>
       {showForm ? (
