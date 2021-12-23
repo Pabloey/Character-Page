@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/about.css";
-import riotLogo from "../content/riot-pairedlogo-white-rgb.png";
+import riotLogoRed from "../content/riot-pairedlogo-red-rgb.png";
 
 export default function About() {
   return (
@@ -29,7 +29,7 @@ export default function About() {
             <img className="lol-logo" src="https://www.riotgames.com/darkroom/original/9a50f5b3bdcfb815580ef103ec9b6ee2:d49b78b12cf185e10127cdf81b144a00/lol-logo-rendered-hi-res.png" alt="League of Legends Logo" />
           </a>
           <a href="https://www.riotgames.com/en" target="_blank" rel="noreferrer">
-            <img className="riot-logo" src={riotLogo} alt="Riot Game's logo" />
+            <img className="riot-logo" src={riotLogoRed} alt="Riot Game's logo" />
           </a>
           <p className="riot-text">All images, information, names relating to characters are owned by Riot Games.</p>
         </div>

@@ -11,27 +11,42 @@
 .about-cont {
   display: grid;
   position: relative;
-  top: 150px;
+  top: 125px;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  color: white;
+  color: #bc605e;
   text-align: center;
+  justify-items: center;
   overflow: hidden;
 }
 
 .left-cont {
+  background-color: white;
+  border-radius: 25px;
   display: grid;
   grid-template-columns: 1fr;
   justify-items: center;
-  align-items: center;
   gap: 20px;
-  opacity: 100%;
+  opacity: 90%;
+  width: 400px;
+  height: auto;
+  padding: 20px 20px;
+  margin-bottom: 20px;
+  box-shadow: 2px 2px 5px rgb(0, 0, 0, 0.25);
 }
 
 .right-cont {
+  background-color: white;
+  border-radius: 25px;
   display: grid;
   grid-template-columns: 1fr;
   justify-items: center;
-  opacity: 100%;
+  gap: 20px;
+  opacity: 90%;
+  width: 400px;
+  height: auto;
+  padding: 20px 20px;
+  margin-bottom: 20px;
+  box-shadow: 2px 2px 5px rgb(0, 0, 0, 0.25);
 }
 
 .lol-logo {

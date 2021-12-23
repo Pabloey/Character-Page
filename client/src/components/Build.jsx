@@ -10,8 +10,11 @@ export const Build = (props) => {
     item4: "1001",
     item5: "1001",
     item6: "1001",
+    userName: "",
     build_id: props.match.params.id,
   });
+
+  console.log(newBuild);
 
   const itemArray = Object.entries(props.items);
 
@@ -72,6 +75,7 @@ export const Build = (props) => {
             </option>
           ))}
         </select>
+        <input name="userName" placeholder="Enter your User Name" onChange={handleChange}></input>
         <div>
           <button className="submit-buttons" type="submit">
             Submit

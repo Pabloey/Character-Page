@@ -8,6 +8,7 @@ const Build = new mongoose.Schema(
     item4: { type: String, required: true },
     item5: { type: String, required: true },
     item6: { type: String, required: true },
+    userName: { type: String, required: true },
     build_id: { type: String, required: true }
   },
   { timestamps: true }
