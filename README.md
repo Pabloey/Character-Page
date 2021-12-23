@@ -12,6 +12,10 @@
 
 Using MongoDB, Express, React and Node I will develop a website that will show my favorite game's characters with details under it. The purpose of the ..page is when you click your characters icon it will display characters lore, information, abilities and build. Users will also be able to add their own builds also. Possibility to update it or maybe delete it.
 
+![image](https://i.ibb.co/r7xp7Rz/Screen-Shot-2021-12-23-at-7-14-02-AM.png)
+
+![image](https://i.ibb.co/V3dvqbb/Screen-Shot-2021-12-23-at-7-13-39-AM.png)
+
 ## How to
 
 `fork` and `clone` this repo.
@@ -24,7 +28,7 @@ Go into the directory it was saved.
 
 ## Deployment
 
-Deployed here [Heroku]()
+Deployed here [Heroku](https://characterpage-project.herokuapp.com/)
 
 Database is hosted on MongoDB Atlas.
 Server and React app are hosted on Heroku.

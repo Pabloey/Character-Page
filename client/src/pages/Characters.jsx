@@ -10,7 +10,6 @@ import caitlynI from "../content/Caitlyn.png";
 import jayceI from "../content/Jayce.png";
 
 export default function Characters(props) {
-  // const [curChar, setCurChar] = useState();
 
   let charArray = [
     { name: "Jinx", image: "http://ddragon.leagueoflegends.com/cdn/11.24.1/img/champion/Jinx.png" },
