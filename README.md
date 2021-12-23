@@ -12,9 +12,9 @@
 
 Using MongoDB, Express, React and Node I will develop a website that will show my favorite game's characters with details under it. The purpose of the ..page is when you click your characters icon it will display characters lore, information, abilities and build. Users will also be able to add their own builds also. Possibility to update it or maybe delete it.
 
-![image](https://i.ibb.co/r7xp7Rz/Screen-Shot-2021-12-23-at-7-14-02-AM.png)
+<img src="/Users/pablo/Desktop/ga_seir/unit2/Character-Page/client/src/content/screenshot1.png" width="750px"/>
 
-![image](https://i.ibb.co/V3dvqbb/Screen-Shot-2021-12-23-at-7-13-39-AM.png)
+<img src="/Users/pablo/Desktop/ga_seir/unit2/Character-Page/client/src/content/screenshot2.png" width="750px"/>
 
 ## How to
 
