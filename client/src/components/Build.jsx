@@ -72,8 +72,14 @@ export const Build = (props) => {
             </option>
           ))}
         </select>
-        <button type="submit">Submit</button>
-        <button onClick={() => props.switchForm()}>Cancel</button>
+        <div>
+          <button className="submit-buttons" type="submit">
+            Submit
+          </button>
+          <button className="submit-buttons" onClick={() => props.switchForm()}>
+            Cancel
+          </button>
+        </div>
       </form>
     </div>
   );

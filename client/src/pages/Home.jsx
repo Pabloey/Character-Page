@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/home.css";
-import myVideo from "../video/arcane-teaser.mp4";
+import myVideo from "../content/arcane-teaser.mp4";
 
 export default function Home() {
   return (

@@ -3,6 +3,7 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import CharHalf from "../components/CharHalf";
 import "../styles/char.css";
+import charBG from "../content/bokeh-bg.jpg";
 
 export default function Characters(props) {
   // const [curChar, setCurChar] = useState();
@@ -19,19 +20,21 @@ export default function Characters(props) {
   };
 
   return (
-    <div>
-      <div className="char-list">
-        {charArray.map((e, i) => (
-          <span className={`char-img-cont char-img-${e.name}`} key={i}>
-            <img className={`char-img`} src={e.image} alt="" onClick={() => handleClick(e)} />
-          </span>
-        ))}
+    <div className="char-bg" style={{ backgroundImage: `url(${charBG})` }}>
+      <div>
+        <div className="char-list">
+          {charArray.map((e, i) => (
+            <span className={`char-img-cont char-img-${e.name}`} key={i}>
+              <img className={`char-img`} src={e.image} alt="" onClick={() => handleClick(e)} />
+            </span>
+          ))}
+        </div>
+        <main className="char-half">
+          <Switch>
+            <Route path="/chars/:id" component={(props) => <CharHalf {...props} />}></Route>
+          </Switch>
+        </main>
       </div>
-      <main className="char-half">
-        <Switch>
-          <Route path="/chars/:id" component={(props) => <CharHalf {...props} />}></Route>
-        </Switch>
-      </main>
     </div>
   );
 }

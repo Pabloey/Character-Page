@@ -60,14 +60,38 @@ export default function CharHalf(props) {
   //Displaying character details and submit build button and build list under.
   return (
     <div>
+      <br />
       <div className="char-details">
         <img className="char-splash" src={character.image} alt="" />
-        <p className="char-lore">Lore: {character.lore}</p>
-        <p className="char-name">Name: {character.name}</p>
+        <div className="char-right-detail">
+          <p className="char-name">{character.name}</p>
+          <p className="char-lore">{character.lore}</p>
+        </div>
+        <p className="rec-build-text">Recommended Build</p>
         <div className="origin-tag">
-          <span className="age-box">Age: {character.age}</span>
-          <span className="origin-box">Origin: {character.origin}</span>
-          <span className="role-box">Role: {character.role}</span>
+          <span className="tag-box">Age: {character.age}</span>
+          <span className="tag-box">Origin: {character.origin}</span>
+          <span className="tag-box">Role: {character.role}</span>
+        </div>
+        <div className="item-cont">
+          <span>
+            <img className="item-image mythic" src={`http://ddragon.leagueoflegends.com/cdn/11.24.1/img/item/${character.item1}`} alt={character.item1} />
+          </span>
+          <span>
+            <img className="item-image" src={`http://ddragon.leagueoflegends.com/cdn/11.24.1/img/item/${character.item2}`} alt={character.item1} />
+          </span>
+          <span>
+            <img className="item-image" src={`http://ddragon.leagueoflegends.com/cdn/11.24.1/img/item/${character.item3}`} alt={character.item1} />
+          </span>
+          <span>
+            <img className="item-image" src={`http://ddragon.leagueoflegends.com/cdn/11.24.1/img/item/${character.item4}`} alt={character.item1} />
+          </span>
+          <span>
+            <img className="item-image" src={`http://ddragon.leagueoflegends.com/cdn/11.24.1/img/item/${character.item5}`} alt={character.item1} />
+          </span>
+          <span>
+            <img className="item-image" src={`http://ddragon.leagueoflegends.com/cdn/11.24.1/img/item/${character.item6}`} alt={character.item1} />
+          </span>
         </div>
         <div className="skill-cont">
           <span>
@@ -86,35 +110,14 @@ export default function CharHalf(props) {
             <img className="skill-image r-skill" src={abilities.rImage} alt="" />
           </span>
         </div>
-        <br />
-        <p>Recommended Build</p>
-        <br />
-        <div className="item-cont">
-          <span>
-            <img className="item-image" src={`http://ddragon.leagueoflegends.com/cdn/11.24.1/img/item/${character.item1}`} alt={character.item1} />
-          </span>
-          <span>
-            <img src={`http://ddragon.leagueoflegends.com/cdn/11.24.1/img/item/${character.item2}`} alt={character.item1} />
-          </span>
-          <span>
-            <img src={`http://ddragon.leagueoflegends.com/cdn/11.24.1/img/item/${character.item3}`} alt={character.item1} />
-          </span>
-          <span>
-            <img src={`http://ddragon.leagueoflegends.com/cdn/11.24.1/img/item/${character.item4}`} alt={character.item1} />
-          </span>
-          <span>
-            <img src={`http://ddragon.leagueoflegends.com/cdn/11.24.1/img/item/${character.item5}`} alt={character.item1} />
-          </span>
-          <span>
-            <img src={`http://ddragon.leagueoflegends.com/cdn/11.24.1/img/item/${character.item6}`} alt={character.item1} />
-          </span>
-        </div>
       </div>
       {showForm ? (
         <Build {...props} switchForm={switchForm} setCharBuilds={setCharBuilds} items={items} setItems={setItems} />
       ) : (
         <div>
-          <button onClick={() => switchForm()}>Submit a build</button>
+          <button className="submit-buttons" onClick={() => switchForm()}>
+            Submit a build
+          </button>
         </div>
       )}
       <BuildList {...props} setCharBuilds={setCharBuilds} charBuilds={charBuilds} items={items} />

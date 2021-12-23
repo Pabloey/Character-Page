@@ -1,9 +1,20 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;800&family=Poppins&family=Teko:wght@300;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,400;0,800;1,800&family=Poppins&family=Teko:wght@300;500;700&display=swap");
 
 .home-text {
   font-family: "Teko";
   font-weight: bolder;
   font-size: 36px;
+}
+
+.char-bg {
+  font-family: "Open Sans";
+  font-weight: bolder;
+  z-index: 0;
+  opacity: 90%;
+  height: 100vh;
+  background-size: 100% auto;
+  background-attachment: fixed;
+  overflow-y: auto;
 }
 
 .nav-bar {
@@ -72,10 +83,16 @@
   text-align: center;
 }
 
+.origin-tag {
+  align-self: center;
+}
+
 .char-details {
+  height: 80vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(5, 0.05fr);
+  grid-template-rows: repeat(3, 0.05fr);
+  gap: 10px;
   font-family: "Poppins";
 }
 
@@ -84,23 +101,56 @@
   height: 400px;
 }
 
-.char-lore {
+.char-right-detail {
   justify-self: center;
   align-self: center;
-  width: 500px;
+}
+
+.char-name {
+  font-size: 96px;
+  margin: 0px;
+  color: white;
+  font-family: "Open Sans";
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.char-lore {
+  width: 600px;
   font-size: 20px;
   font-weight: bold;
   font-family: "Teko";
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .skill-image {
   filter: grayscale(75%);
   transition: 0.35s;
-  border: 1.5px solid black;
+  border: 1.5px solid white;
   margin: 0px 5px;
   box-shadow: 1px 1px 5px black;
 }
 
 .skill-image:hover {
   filter: grayscale(0%);
+}
+
+.item-image {
+  margin: 0px 5px;
+  border: 1.5px solid white;
+}
+
+.mythic {
+  border: 1.5px solid orange;
+}
+
+.rec-build-text {
+  color: white;
+}
+
+.tag-box {
+  margin: 0px 5px;
+  background-color: white;
+  padding: 2px 5px;
+  border-radius: 10px;
 }
