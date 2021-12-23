@@ -122,6 +122,7 @@
   font-family: "Teko";
   color: rgba(255, 255, 255, 0.5);
 }
+
 .skill-cont {
   position: relative;
   display: flex;
@@ -171,15 +172,23 @@
   transition: 0.35s;
   border: 1.5px solid white;
   margin: 0px 5px;
-  box-shadow: 1px 1px 5px black;
+  box-shadow: 2px 2px 5px black;
 }
 .skill-image:hover {
   filter: grayscale(0%);
+  transform: scale(115%);
 }
 
 .item-image {
   margin: 0px 5px;
   border: 1.5px solid white;
+  box-shadow: 2px 2px 5px black;
+}
+
+.buildlist-items {
+  margin: 0px 5px;
+  border: 1.5px solid white;
+  box-shadow: 2px 2px 5px black;
 }
 
 .mythic {
@@ -197,12 +206,22 @@
   border-radius: 10px;
 }
 
+.submit-buttons {
+  padding: 10px 50px;
+  border-radius: 5px;
+  margin: 25px 0px;
+}
+
 .sub-a-build {
-  margin-top: 50px;
+  margin-top: 100px;
 }
 
 .build-form {
   margin-top: 50px;
+}
+
+.buildlist {
+  margin-bottom: 50px;
 }
 
 .delete-btn {
@@ -214,6 +233,11 @@
   width: 34px;
   right: -4px;
   top: -42px;
+  transition: 0.25s;
+}
+
+.delete-btn:hover {
+  transform: translateX(10px);
 }
 
 .edit-btn {
@@ -225,6 +249,11 @@
   width: 34px;
   right: 30px;
   top: -9px;
+  transition: 0.25s;
+}
+
+.edit-btn:hover {
+  transform: translateX(10px);
 }
 
 .about-cont {

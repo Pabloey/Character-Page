@@ -78,8 +78,12 @@ export default function EditBuild(props) {
           ))}
         </select>
         <div>
-          <button type="submit">Update</button>
-          <button onClick={() => props.switchEdit()}>Cancel</button>
+          <button className="submit-buttons" type="submit">
+            Update
+          </button>
+          <button className="submit-buttons" onClick={() => props.switchEdit()}>
+            Cancel
+          </button>
         </div>
       </form>
     </div>
