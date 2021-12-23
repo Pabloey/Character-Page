@@ -1,0 +1,86 @@
+.about-bg {
+  position: absolute;
+  background-attachment: fixed;
+  width: 100vw;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  background: linear-gradient(217deg, rgba(241, 200, 200, 0.8), rgba(255, 0, 0, 0.521) 70.71%), linear-gradient(125deg, rgba(172, 185, 172, 0.8), rgba(0, 255, 0, 0) 70.71%);
+}
+
+.about-cont {
+  display: grid;
+  position: relative;
+  top: 150px;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  color: white;
+  text-align: center;
+  overflow: hidden;
+}
+
+.left-cont {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  align-items: center;
+  gap: 20px;
+  opacity: 100%;
+}
+
+.right-cont {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  opacity: 100%;
+}
+
+.lol-logo {
+  width: 350px;
+}
+
+.riot-logo {
+  width: 350px;
+}
+
+.riot-text {
+  width: 350px;
+}
+
+.fa {
+  padding: 20px 80px;
+  color: white;
+  transition: all 0.25s ease-in-out;
+  border: 2px solid black;
+  font-size: large;
+  text-decoration: none;
+}
+
+.fa:hover {
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.75);
+  position: relative;
+  transform: translate(-5px, -5px);
+}
+
+.fa-github {
+  width: 150px;
+  height: 25px;
+  background-color: #161b22;
+}
+
+.fa-codepen {
+  width: 150px;
+  height: 25px;
+  background-color: #131417;
+}
+
+.fa-linkedin {
+  width: 150px;
+  height: 25px;
+  background-color: #007bb5;
+}
+
+.fa-google {
+  width: 150px;
+  height: 25px;
+  background: #dd4b39;
+}

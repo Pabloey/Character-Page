@@ -29,7 +29,7 @@ export const Build = (props) => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form className="build-form" onSubmit={handleSubmit}>
         <select name="item1" onChange={handleChange}>
           {itemArray.map((e, i) => (
             <option key={i} value={e[0]}>

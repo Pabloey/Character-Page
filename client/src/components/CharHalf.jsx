@@ -5,8 +5,7 @@ import { Build } from "./Build";
 import BuildList from "./BuildList";
 import { BASE_URL } from "../globals";
 
-//CharHalf is
-
+//CharHalf is the details under character image/details
 export default function CharHalf(props) {
   //Tern op to flip submit form on and off
   const [showForm, setShowForm] = useState(false);
@@ -94,7 +93,7 @@ export default function CharHalf(props) {
           </span>
         </div>
         <div className="skill-cont">
-          <span>
+          <span className="skill-box">
             <img className="skill-image p-skill" src={abilities.pImage} alt="" />
           </span>
           <span>
@@ -115,7 +114,7 @@ export default function CharHalf(props) {
         <Build {...props} switchForm={switchForm} setCharBuilds={setCharBuilds} items={items} setItems={setItems} />
       ) : (
         <div>
-          <button className="submit-buttons" onClick={() => switchForm()}>
+          <button className="submit-buttons sub-a-build" onClick={() => switchForm()}>
             Submit a build
           </button>
         </div>

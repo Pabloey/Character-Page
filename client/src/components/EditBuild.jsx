@@ -34,7 +34,7 @@ export default function EditBuild(props) {
   //Mapping through Arrays to make 6 Select-options.
   return (
     <div>
-      <form onSubmit={handleUpdate}>
+      <form className="update-form" onSubmit={handleUpdate}>
         <select name="item1" onChange={handleChange}>
           {itemArray.map((e, i) => (
             <option key={i} value={e[0]}>
@@ -77,8 +77,10 @@ export default function EditBuild(props) {
             </option>
           ))}
         </select>
-        <button type="submit">Update</button>
-        <button onClick={() => props.switchEdit()}>Cancel</button>
+        <div>
+          <button type="submit">Update</button>
+          <button onClick={() => props.switchEdit()}>Cancel</button>
+        </div>
       </form>
     </div>
   );

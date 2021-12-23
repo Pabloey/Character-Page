@@ -41,10 +41,12 @@ export default function Item(props) {
             <img src={`http://ddragon.leagueoflegends.com/cdn/11.24.1/img/item/${e.item4}.png`} alt={e.item4} />
             <img src={`http://ddragon.leagueoflegends.com/cdn/11.24.1/img/item/${e.item5}.png`} alt={e.item5} />
             <img src={`http://ddragon.leagueoflegends.com/cdn/11.24.1/img/item/${e.item6}.png`} alt={e.item6} />
-            <button onClick={handleDelete} name={e._id}>
-              X
+            <button className="delete-btn" onClick={handleDelete} name={e._id}>
+              &#9746;
             </button>
-            <button onClick={() => switchEdit(e)}>Edit Build</button>
+            <button className="edit-btn" onClick={() => switchEdit(e)}>
+              &#9997;
+            </button>
           </div>
         ))
       ) : (

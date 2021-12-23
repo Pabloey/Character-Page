@@ -11,7 +11,7 @@
   font-weight: bolder;
   z-index: 0;
   opacity: 90%;
-  height: 100vh;
+  height: 150vh;
   background-size: 100% auto;
   background-attachment: fixed;
   overflow-y: auto;
@@ -88,7 +88,7 @@
 }
 
 .char-details {
-  height: 80vh;
+  height: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(3, 0.05fr);
@@ -122,6 +122,9 @@
   font-family: "Teko";
   color: rgba(255, 255, 255, 0.5);
 }
+.skill-box {
+  position: relative;
+}
 
 .skill-image {
   filter: grayscale(75%);
@@ -153,4 +156,39 @@
   background-color: white;
   padding: 2px 5px;
   border-radius: 10px;
+}
+
+.sub-a-build {
+  margin-top: 50px;
+}
+
+.build-form {
+  margin-top: 50px;
+}
+
+.delete-btn {
+  position: relative;
+  color: white;
+  background-color: red;
+  border: 0px solid black;
+  height: 32px;
+  width: 34px;
+  right: -4px;
+  top: -42px;
+}
+
+.edit-btn {
+  position: relative;
+  color: white;
+  background-color: green;
+  border: 0px solid black;
+  height: 33px;
+  width: 34px;
+  right: 30px;
+  top: -9px;
+}
+
+.about-cont {
+  font-family: "Open Sans";
+  font-weight: bold;
 }
